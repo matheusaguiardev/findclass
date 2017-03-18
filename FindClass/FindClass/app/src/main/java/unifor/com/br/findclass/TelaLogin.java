@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 public class TelaLogin extends AppCompatActivity implements View.OnClickListener {
 
+    //Campos e Botões do layout
     private EditText campoSenha;
     private EditText campoMatricula;
     private TextView txtRecuperarSenha;
