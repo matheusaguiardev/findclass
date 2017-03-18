@@ -9,14 +9,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="unifor.com.br.findclass.TelaLogin">
+    tools:context="unifor.com.br.findclass.TelaLogin"
+    android:background="@android:color/white">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/teladelogin"
         android:layout_marginTop="30dp"
-        android:id="@+id/imageView"
+        android:id="@+id/imgTelaLogin"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/cmp_matricula"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:hint="@string/cmpMatricula" />
@@ -36,26 +37,26 @@
         android:inputType="textPassword"
         android:ems="10"
         android:layout_marginTop="23dp"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignStart="@+id/editText"
+        android:id="@+id/cmp_senha"
+        android:layout_below="@+id/cmp_matricula"
+        android:layout_alignStart="@+id/cmp_matricula"
         android:hint="@string/cmpSenha" />
 
     <Button
         android:text="@string/btnEntrar"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:id="@+id/button"
+        android:id="@+id/btn_entrar"
         android:layout_width="200dp"
-        android:layout_below="@+id/editText2"
+        android:layout_below="@+id/cmp_senha"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="@string/txtRecSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/btn_entrar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
-        android:id="@+id/textView" />
+        android:id="@+id/txt_rec_senha" />
 </RelativeLayout>
