@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
 
-public class TelaLogin extends AppCompatActivity implements View.OnClickListener {
+public class TelaLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText campoSenha;
     private EditText campoMatricula;
@@ -25,14 +25,12 @@ public class TelaLogin extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_tela_login);
 
         imgUniforLogin = (ImageView) findViewById(R.id.imgTelaLogin);
-
         campoMatricula = (EditText) findViewById(R.id.cmp_matricula);
         campoSenha = (EditText) findViewById(R.id.cmp_senha);
-
         txtRecuperarSenha = (TextView) findViewById(R.id.txt_rec_senha);
-        txtRecuperarSenha.setOnClickListener(this);
-
         btnEntrar = (Button) findViewById(R.id.btn_entrar);
+
+        txtRecuperarSenha.setOnClickListener(this);
         btnEntrar.setOnClickListener(this);
 
     }
