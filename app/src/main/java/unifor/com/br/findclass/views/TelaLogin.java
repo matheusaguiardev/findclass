@@ -1,4 +1,4 @@
-package unifor.com.br.findclass;
+package unifor.com.br.findclass.views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import unifor.com.br.findclass.R;
+
 public class TelaLogin extends AppCompatActivity implements View.OnClickListener {
 
-    //Campos e Botões do layout
     private EditText campoSenha;
     private EditText campoMatricula;
     private TextView txtRecuperarSenha;
@@ -40,39 +41,26 @@ public class TelaLogin extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.txt_rec_senha: // ID do recuperar senha
-
-                //        Envia para tela de recuperar senha
-                //               Intent it1 = new Intent(this,RecuperarSenhaActivity.class);
-                //               startActivity(it1);
-                //               break;
-            case R.id.btn_entrar:
-
-                String strMatricula = campoMatricula.getText().toString();
-                String strSenha = campoSenha.getText().toString();
-
-                Boolean valido = true;
-
-//                // Verifica Matricula
-                if (strMatricula.isEmpty()) {
-                    campoMatricula.setError("Matricula obrigatória");
-                    valido = false;
-                }
-//                // Verifica Senha
-                if (strSenha.isEmpty()) {
-                    campoSenha.setError("Senha obrigatória");
-                    valido = false;
-                }
-
-                // Implementar Verificação com o banco
-
-                if (valido) {
-//               TELA PRINCIPAL
-                    Intent it = new Intent(this, MainActivity.class);
-                    startActivity(it);
-                }
-
+            case R.id.txt_rec_senha:
                 break;
+            case R.id.btn_entrar:
+                validateUser();
+                break;
+            default:
+        }
+    }
+
+    private void validateUser() {
+        String strMatricula = campoMatricula.getText().toString();
+        String strSenha = campoSenha.getText().toString();
+
+        if (!strMatricula.isEmpty() && !strSenha.isEmpty()) {
+            Intent it = new Intent(this, MainActivity.class);
+            startActivity(it);
+        } else if (strMatricula.isEmpty()) {
+            campoMatricula.setError("Matricula obrigatória");
+        } else {
+            campoSenha.setError("Senha obrigatória");
         }
     }
 }
