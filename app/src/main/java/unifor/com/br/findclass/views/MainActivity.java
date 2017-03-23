@@ -11,10 +11,18 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     TabLayout tabLayout;
     ViewPager viewPager;
 
+    String usuarioLogin;
+    String usuarioSenha;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle bundle = getIntent().getExtras();
+
+        usuarioLogin = bundle.get("user").toString();
+        usuarioSenha = bundle.get("password").toString();
 
         this.tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         this.viewPager = (ViewPager) findViewById(R.id.pager);
@@ -23,6 +31,7 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
         viewPager = configViewPager(this.tabLayout, this.viewPager);
 
         tabLayout.addOnTabSelectedListener(this);
+
 
     }
 
