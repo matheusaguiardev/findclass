@@ -2,7 +2,6 @@ package unifor.com.br.findclass.views;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
 
-public class TelaLoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class TelaLoginActivity extends GenericActivity implements View.OnClickListener {
 
     private EditText campoSenha;
     private EditText campoMatricula;
@@ -53,8 +52,10 @@ public class TelaLoginActivity extends AppCompatActivity implements View.OnClick
         String strSenha = campoSenha.getText().toString();
 
         if (!strMatricula.isEmpty() && !strSenha.isEmpty()) {
+            loginSharedPreference(strMatricula, strSenha);
             Intent it = new Intent(this, MainActivity.class);
             startActivity(it);
+            finish();
         } else if (strMatricula.isEmpty()) {
             campoMatricula.setError("Matricula obrigatória");
         } else {

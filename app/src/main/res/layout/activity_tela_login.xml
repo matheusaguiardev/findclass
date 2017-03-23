@@ -5,54 +5,54 @@
     android:id="@+id/activity_tela_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="unifor.com.br.findclass.views.TelaLoginActivity"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context="unifor.com.br.findclass.views.TelaLoginActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/teladelogin"
-        android:layout_marginTop="30dp"
         android:id="@+id/imgTelaLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/cmp_matricula"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:hint="@string/cmpMatricula" />
+        android:layout_marginTop="30dp"
+        app:srcCompat="@drawable/teladelogin" />
 
     <EditText
+        android:id="@+id/cmp_matricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:ems="10"
-        android:layout_marginTop="23dp"
+        android:hint="@string/cmpMatricula"
+        android:inputType="numberDecimal" />
+
+    <EditText
         android:id="@+id/cmp_senha"
-        android:layout_below="@+id/cmp_matricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/cmp_matricula"
-        android:hint="@string/cmpSenha" />
+        android:layout_below="@+id/cmp_matricula"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="@string/cmpSenha"
+        android:inputType="textPassword" />
 
     <Button
-        android:text="@string/btnEntrar"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
         android:id="@+id/btn_entrar"
         android:layout_width="200dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/cmp_senha"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/btnEntrar" />
 
     <TextView
-        android:text="@string/txtRecSenha"
+        android:id="@+id/txt_rec_senha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_entrar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
-        android:id="@+id/txt_rec_senha" />
+        android:text="@string/txtRecSenha" />
 </RelativeLayout>
