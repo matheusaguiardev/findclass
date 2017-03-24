@@ -4,11 +4,83 @@
     android:layout_height="match_parent"
     tools:context="unifor.com.br.findclass.fragments.BuscaFragment">
 
-    <TextView
-        android:id="@+id/text"
+    <RelativeLayout
+        android:id="@+id/container_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+
+
+        <EditText
+            android:id="@+id/bloco_edit_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="63dp"
+            android:layout_marginBottom="26dp"
+            android:hint="Bloco"
+            android:layout_marginTop="30dp" />
+
+        <EditText
+            android:id="@+id/sala_edit_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="Sala"
+            android:layout_toEndOf="@+id/bloco_edit_text"
+            android:layout_marginStart="41dp" />
+
+        <RadioButton
+            android:id="@+id/sala_livre_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bloco_edit_text"
+            android:layout_marginStart="40dp" />
+
+        <TextView
+            android:id="@+id/sala_livre_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salas Livres"
+            android:layout_marginBottom="7dp"
+            android:layout_alignBottom="@+id/sala_livre_radio_button"
+            android:layout_toEndOf="@+id/sala_livre_radio_button" />
+
+        <RadioButton
+            android:id="@+id/laboratorios_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sala_livre_radio_button"
+            android:layout_marginStart="40dp" />
+
+        <TextView
+            android:id="@+id/laboratorios_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/laboratorios_radio_button"
+            android:layout_alignBottom="@+id/laboratorios_radio_button"
+            android:layout_marginBottom="7dp"
+            android:text="Laboratórios" />
+
+        <Button
+            android:id="@+id/buscar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:textAllCaps="false"
+            android:layout_below="@+id/sala_edit_text"
+            android:layout_alignStart="@+id/sala_edit_text"
+            android:layout_marginTop="35dp" />
+
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/salas_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_top"
+        android:layout_marginTop="10dp" />
+
 
 </RelativeLayout>
