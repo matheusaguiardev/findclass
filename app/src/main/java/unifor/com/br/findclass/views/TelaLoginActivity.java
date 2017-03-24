@@ -53,8 +53,10 @@ public class TelaLoginActivity extends GenericActivity implements View.OnClickLi
 
         if (!strMatricula.isEmpty() && !strSenha.isEmpty()) {
             loginSharedPreference(strMatricula, strSenha);
-            Intent it = new Intent(this, MainActivity.class);
-            startActivity(it);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("user", strMatricula);
+            intent.putExtra("password", strSenha);
+            startActivity(intent);
             finish();
         } else if (strMatricula.isEmpty()) {
             campoMatricula.setError("Matricula obrigatória");
