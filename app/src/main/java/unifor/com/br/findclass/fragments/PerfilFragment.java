@@ -6,15 +6,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
+import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
 import unifor.com.br.findclass.views.MainActivity;
 
 public class PerfilFragment extends Fragment {
 
     private TextView nomeUsuario;
     private TextView matriculaUsuario;
+    private BuscaListViewAdapter adapter;
+    private ListView listaHistorico;
 
     MainActivity myActivity;
 
@@ -24,10 +28,25 @@ public class PerfilFragment extends Fragment {
         View visao = inflater.inflate(R.layout.fragment_perfil, container , false);
         myActivity = (MainActivity) getActivity();
 
+        listaHistorico = (ListView) visao.findViewById(R.id.salas_his_list);
         nomeUsuario = (TextView) visao.findViewById(R.id.textView_nome1);
         matriculaUsuario = (TextView) visao.findViewById(R.id.textView_matricula1);
 
+        adapter = new BuscaListViewAdapter();
 
-        return inflater.inflate(R.layout.fragment_perfil, container, false);
+        return visao;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        adapter.setSalaArrayList(myActivity.historicoSalas());
+        adapter.setContext(myActivity);
+        listaHistorico.setAdapter(adapter);
+
+    }
+
+
+
 }
