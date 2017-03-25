@@ -10,11 +10,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
-import java.util.ArrayList;
-
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
-import unifor.com.br.findclass.model.Sala;
 import unifor.com.br.findclass.views.MainActivity;
 
 public class BuscaFragment extends Fragment {
@@ -55,23 +52,11 @@ public class BuscaFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        adapter.setSalaArrayList(criarSala());
+        adapter.setSalaArrayList(myActivity.criarSala());
         adapter.setContext(myActivity);
         listView.setAdapter(adapter);
 
     }
 
-    private ArrayList<Sala> criarSala() {
-        ArrayList<Sala> salas = new ArrayList<>();
-
-        salas.add(new Sala("Bloco A", 10, false));
-        salas.add(new Sala("Bloco C", 5, false));
-        salas.add(new Sala("Bloco F", 3, true));
-        salas.add(new Sala("Bloco T", 1, false));
-        salas.add(new Sala("Bloco J", 6, true));
-        salas.add(new Sala("Bloco Q", 9, false));
-
-        return salas;
-    }
 
 }
