@@ -53,6 +53,17 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
         return salas;
     }
 
+    public ArrayList<Sala> historicoSalas() {
+        ArrayList<Sala> salas = new ArrayList<>();
+
+        salas.add(new Sala("Bloco T", 5, true));
+        salas.add(new Sala("Bloco D", 15, false));
+        salas.add(new Sala("Bloco R", 17, true));
+
+        return salas;
+    }
+
+
     public void adicionarSala(String bloco, int num, boolean lab) {
         this.salas.add(new Sala("Bloco " + bloco, num, lab));
     }
