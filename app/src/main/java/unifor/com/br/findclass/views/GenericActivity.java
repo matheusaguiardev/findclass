@@ -24,6 +24,7 @@ public class GenericActivity extends AppCompatActivity {
     protected TabLayout configTablayout(TabLayout tabLayout) {
         tabLayout.addTab(tabLayout.newTab().setText("Perfil"));
         tabLayout.addTab(tabLayout.newTab().setText("Buscar"));
+        tabLayout.addTab(tabLayout.newTab().setText("Cadastro"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         return tabLayout;
     }
