@@ -9,7 +9,7 @@
 
     <ImageView
             android:layout_height="125dp"
-            app:srcCompat="@drawable/trollface"
+            app:srcCompat="@drawable/fotoperfil"
             android:id="@+id/imgperfil"
             android:layout_width="140dp"
             android:layout_margin="10dp" />
