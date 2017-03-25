@@ -10,34 +10,97 @@
         android:id="@+id/container_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/sala_livre_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="23dp"
             android:foregroundGravity="center"
             android:text="@string/text_sala"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/adtDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/sala_livre_text_view"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="date"
+            android:layout_below="@+id/sala_livre_text_view"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/container_semana"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container_top"
+        android:layout_alignParentStart="true">
 
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:autoText="false"
+            android:hint="S"
+            android:text="S" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/toggleButton1"
+            android:layout_alignBottom="@+id/toggleButton1"
+            android:layout_toEndOf="@+id/toggleButton1"
+            android:text="T" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/toggleButton2"
+            android:layout_alignBottom="@+id/toggleButton2"
+            android:layout_toEndOf="@+id/toggleButton2"
+            android:text="Q" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/toggleButton3"
+            android:layout_alignBottom="@+id/toggleButton3"
+            android:layout_marginTop="11dp"
+            android:layout_toEndOf="@+id/toggleButton3"
+            android:text="Q" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/toggleButton4"
+            android:layout_alignBottom="@+id/toggleButton4"
+            android:layout_toEndOf="@+id/toggleButton4"
+            android:text="S" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/toggleButton5"
+            android:layout_alignBottom="@+id/toggleButton5"
+            android:layout_toEndOf="@+id/toggleButton5"
+            android:text="S" />
+
+    </RelativeLayout>
 
 
 </RelativeLayout>
