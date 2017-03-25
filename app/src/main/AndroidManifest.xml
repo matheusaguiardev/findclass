@@ -24,7 +24,7 @@
         <activity
             android:name=".views.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".CadastroActivity"></activity>
+        <activity android:name=".views.CadastroActivity"></activity>
     </application>
 
 </manifest>
