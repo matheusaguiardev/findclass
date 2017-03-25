@@ -30,7 +30,7 @@
             android:layout_toEndOf="@+id/bloco_edit_text"
             android:layout_marginStart="41dp" />
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/sala_livre_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             android:layout_alignBottom="@+id/sala_livre_radio_button"
             android:layout_toEndOf="@+id/sala_livre_radio_button" />
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/laboratorios_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
