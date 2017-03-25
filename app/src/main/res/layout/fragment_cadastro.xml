@@ -50,9 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="false"
-            android:autoText="false"
-            android:hint="S"
-            android:text="S" />
+            android:textOff="S" android:textOn="S"/>
 
         <ToggleButton
             android:id="@+id/toggleButton2"
@@ -61,7 +59,7 @@
             android:layout_alignBaseline="@+id/toggleButton1"
             android:layout_alignBottom="@+id/toggleButton1"
             android:layout_toEndOf="@+id/toggleButton1"
-            android:text="T" />
+            android:textOff="T" android:textOn="T" />
 
         <ToggleButton
             android:id="@+id/toggleButton3"
@@ -70,7 +68,7 @@
             android:layout_alignBaseline="@+id/toggleButton2"
             android:layout_alignBottom="@+id/toggleButton2"
             android:layout_toEndOf="@+id/toggleButton2"
-            android:text="Q" />
+            android:textOff="Q" android:textOn="Q" />
 
         <ToggleButton
             android:id="@+id/toggleButton4"
@@ -80,7 +78,7 @@
             android:layout_alignBottom="@+id/toggleButton3"
             android:layout_marginTop="11dp"
             android:layout_toEndOf="@+id/toggleButton3"
-            android:text="Q" />
+            android:textOff="Q" android:textOn="Q" />
 
         <ToggleButton
             android:id="@+id/toggleButton5"
@@ -89,7 +87,7 @@
             android:layout_alignBaseline="@+id/toggleButton4"
             android:layout_alignBottom="@+id/toggleButton4"
             android:layout_toEndOf="@+id/toggleButton4"
-            android:text="S" />
+            android:textOff="S" android:textOn="S" />
 
         <ToggleButton
             android:id="@+id/toggleButton6"
@@ -98,7 +96,7 @@
             android:layout_alignBaseline="@+id/toggleButton5"
             android:layout_alignBottom="@+id/toggleButton5"
             android:layout_toEndOf="@+id/toggleButton5"
-            android:text="S" />
+            android:textOff="S" android:textOn="S" />
 
     </RelativeLayout>
 
