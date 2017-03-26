@@ -6,23 +6,34 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CadastroFragment extends Fragment {
 
-    public CadastroFragment() {
-        // Required empty public constructor
-    }
+
+    private TextView txtNomeSala;
+
+    private EditText edtData;
+    private EditText edtHora;
+
+    private Button btnRegistrar;
+    private Button btnCancelar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cadastro, container, false);
+        View visao = inflater.inflate(R.layout.fragment_cadastro, container , false);
+
+
+
+
+
+
+        return visao;
     }
 
 }
