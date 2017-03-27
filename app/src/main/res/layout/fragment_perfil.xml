@@ -1,5 +1,5 @@
 <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,52 +8,66 @@
 
 
     <ImageView
-            android:layout_height="125dp"
-            android:src="@drawable/trollface"
-            android:id="@+id/imgperfil"
-            android:layout_width="140dp"
-            android:layout_margin="10dp" />
+        android:layout_height="125dp"
+        android:src="@drawable/trollface"
+        android:id="@+id/imgperfil"
+        android:layout_width="140dp"
+        android:layout_margin="10dp" />
     <TextView
-            android:text="Nome: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_nome"
-            android:textSize="@dimen/tamanho_textview"
-            android:layout_marginLeft="160dp"
-            android:layout_marginTop="50dp" />
+        android:text="Nome: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_nome"
+        android:textSize="@dimen/tamanho_textview"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/black" />
 
     <TextView
-            android:text="Matricula: "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_matricula"
-            android:layout_marginLeft="160dp"
-            android:layout_marginTop="75dp"
-            android:textSize="@dimen/tamanho_textview" />
+        android:text="Matricula: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_matricula"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="75dp"
+        android:textSize="@dimen/tamanho_textview"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_nome1"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="205dp"
-            android:textSize="@dimen/tamanho_textview" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_nome1"
+        android:layout_alignBaseline="@+id/textView_nome"
+        android:layout_alignBottom="@+id/textView_nome"
+        android:layout_marginLeft="205dp"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_matricula1"
-            android:layout_marginTop="75dp"
-            android:layout_marginLeft="230dp"
-            android:textSize="@dimen/tamanho_textview" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView_matricula"
+        android:id="@+id/textView_matricula1"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="1dp"
+        android:textColor="@android:color/background_dark" />
+
+    <TextView
+        android:text="                Histórico de registros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgperfil"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView_titulo"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imgperfil"
+        android:layout_below="@+id/textView_titulo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"
         android:id="@+id/salas_his_list"
-        android:background="@android:color/background_light" />
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>

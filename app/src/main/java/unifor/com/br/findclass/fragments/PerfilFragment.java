@@ -32,6 +32,8 @@ public class PerfilFragment extends Fragment {
         nomeUsuario = (TextView) visao.findViewById(R.id.textView_nome1);
         matriculaUsuario = (TextView) visao.findViewById(R.id.textView_matricula1);
 
+        matriculaUsuario.setText(myActivity.getUsuarioLogin());
+
         adapter = new BuscaListViewAdapter();
 
         return visao;

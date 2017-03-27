@@ -81,4 +81,7 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
     }
+
+    public String getUsuarioLogin () { return usuarioLogin;}
+
 }
