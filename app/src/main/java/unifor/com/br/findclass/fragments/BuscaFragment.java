@@ -67,6 +67,7 @@ public class BuscaFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
             case R.id.sala_livre_radio_button:
                 if (salaLivreCheckBox.isChecked()) {
                     Toast.makeText(myActivity, "Sala selecionada", Toast.LENGTH_SHORT).show();
