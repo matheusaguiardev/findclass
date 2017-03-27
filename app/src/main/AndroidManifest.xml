@@ -22,6 +22,9 @@
             android:name=".views.TelaLoginActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".views.RegistroActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".views.MainActivity"
             android:screenOrientation="portrait" />
     </application>

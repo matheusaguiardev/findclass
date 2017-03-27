@@ -1,10 +1,12 @@
 package unifor.com.br.findclass.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
 import unifor.com.br.findclass.views.MainActivity;
+import unifor.com.br.findclass.views.RegistroActivity;
+import unifor.com.br.findclass.views.TelaLoginActivity;
 
 public class BuscaFragment extends Fragment implements View.OnClickListener {
 
@@ -61,6 +65,15 @@ public class BuscaFragment extends Fragment implements View.OnClickListener {
         adapter.setSalaArrayList(myActivity.criarSala());
         adapter.setContext(myActivity);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(myActivity, RegistroActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

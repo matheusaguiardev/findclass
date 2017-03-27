@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import unifor.com.br.findclass.R;
 
@@ -13,7 +12,7 @@ import unifor.com.br.findclass.R;
  * Created by thiago on 26/03/17.
  */
 
-public class RegistroActivity extends GenericActivity implements View.OnClickListener {
+public class RegistroActivity extends  GenericActivity implements  View.OnClickListener{
 
     private TextView txtNomeSala;
     private EditText edtData;
@@ -21,7 +20,7 @@ public class RegistroActivity extends GenericActivity implements View.OnClickLis
     private Button btnRegistrar;
     private Button btnCancelar;
 
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
@@ -37,19 +36,20 @@ public class RegistroActivity extends GenericActivity implements View.OnClickLis
 
     }
 
+
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btn_registrar:
-                // registrar a sala e retornar para a activity principal
-                break;
             case R.id.btn_cancelar:
-                // retornar para activity principal
+                //Retornar para Tela anterior
+                break;
+            case R.id.btn_registrar:
+                //Registrar Sala
                 break;
             default:
         }
+
+
     }
-
-
 }
