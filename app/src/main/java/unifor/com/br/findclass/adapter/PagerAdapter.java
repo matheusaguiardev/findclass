@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import unifor.com.br.findclass.fragments.BuscaFragment;
-import unifor.com.br.findclass.fragments.CadastroFragment;
 import unifor.com.br.findclass.fragments.PerfilFragment;
 
 /**
@@ -29,9 +28,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 BuscaFragment buscaFragment = new BuscaFragment();
                 return buscaFragment;
-            case 2:
-                CadastroFragment cadastroFragment = new CadastroFragment();
-                return cadastroFragment;
+
             default:
                 return null;
         }
