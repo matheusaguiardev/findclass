@@ -6,7 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import unifor.com.br.findclass.R;
+import unifor.com.br.findclass.fragments.PerfilFragment;
 
 /**
  * Created by thiago on 26/03/17.
@@ -31,21 +34,29 @@ public class RegistroActivity extends  GenericActivity implements  View.OnClickL
         btnRegistrar = (Button) findViewById(R.id.btn_registrar);
         btnCancelar = (Button) findViewById(R.id.btn_cancelar);
 
+        edtData.setOnClickListener(this);
+        edtHora.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);
         btnCancelar.setOnClickListener(this);
 
     }
 
-
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btn_cancelar:
-                //Retornar para Tela anterior
+            case R.id.edt_data:
+                //Escolher data
+                break;
+            case R.id.adt_hora:
+                //Escolher hora
                 break;
             case R.id.btn_registrar:
                 //Registrar Sala
+                Toast.makeText(this, "Registra Data e Hora", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btn_cancelar:
+                //Retornar para Tela anterior
                 break;
             default:
         }

@@ -49,33 +49,43 @@
         android:layout_below="@+id/edt_data"
         android:layout_alignStart="@+id/edt_data" />
 
-    <Button
-        android:id="@+id/btn_registrar"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/adt_hora"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:background="@android:color/holo_green_light"
-        android:text="@string/btnRegistrar"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="219dp" />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_cancelar"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/btn_registrar"
-        android:layout_below="@+id/btn_registrar"
-        android:layout_marginTop="32dp"
-        android:background="@android:color/holo_red_light"
-        android:text="@string/btnCancelar"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="287dp" />
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignStart="@+id/txt_nome_sala"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/holo_green_light"
+            android:text="@string/btnRegistrar"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="219dp" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/btn_registrar"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/btnCancelar"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="287dp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
 
