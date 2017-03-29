@@ -17,6 +17,8 @@ import unifor.com.br.findclass.views.RegistroActivity;
 
 public class PerfilFragment extends Fragment {
 
+    private String provisorio = "Thiago Alonso";   // String usada como entrada do TextView da tela Perfil, enquanto não implementamos
+                                                   // a logica de busca dos dados da aplicação
     private TextView nomeUsuario;
     private TextView matriculaUsuario;
     private BuscaListViewAdapter adapter;
@@ -35,7 +37,7 @@ public class PerfilFragment extends Fragment {
         matriculaUsuario = (TextView) visao.findViewById(R.id.textView_matricula1);
 
         matriculaUsuario.setText(myActivity.getUsuarioLogin());
-
+        nomeUsuario.setText(provisorio);
         adapter = new BuscaListViewAdapter();
 
 
