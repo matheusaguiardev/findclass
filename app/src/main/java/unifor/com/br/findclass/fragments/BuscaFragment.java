@@ -17,7 +17,6 @@ import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
 import unifor.com.br.findclass.views.MainActivity;
 import unifor.com.br.findclass.views.RegistroActivity;
-import unifor.com.br.findclass.views.TelaLoginActivity;
 
 public class BuscaFragment extends Fragment implements View.OnClickListener {
 

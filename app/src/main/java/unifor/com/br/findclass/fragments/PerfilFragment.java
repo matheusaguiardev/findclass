@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
+import unifor.com.br.findclass.views.InformacoesActivity;
 import unifor.com.br.findclass.views.MainActivity;
 import unifor.com.br.findclass.views.RegistroActivity;
 
@@ -60,6 +61,15 @@ public class PerfilFragment extends Fragment {
         adapter.setSalaArrayList(myActivity.historicoSalas());
         adapter.setContext(myActivity);
         listaHistorico.setAdapter(adapter);
+        listaHistorico.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(myActivity, InformacoesActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 

@@ -12,4 +12,6 @@
     <string name="txt_nome_sala">Bloco A - Sala 1</string>
     <string name="btnRegistrar">Registrar</string>
     <string name="btnCancelar">Cancelar</string>
+    <string name="txt_nome_sala_inf">Bloco D - Sala 15</string>
+    <string name="btnDesmarcar">Cancelar Registro</string>
 </resources>
