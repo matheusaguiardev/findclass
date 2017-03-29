@@ -69,6 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textView_titulo"
+        android:listSelector="@android:color/transparent"
         android:layout_centerHorizontal="true"
         android:id="@+id/salas_his_list"
         android:layout_marginTop="20dp" />

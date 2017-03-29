@@ -43,12 +43,12 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     public ArrayList<Sala> criarSala() {
         ArrayList<Sala> salas = new ArrayList<>();
 
-        salas.add(new Sala("Bloco A", 10, false));
-        salas.add(new Sala("Bloco C", 5, false));
-        salas.add(new Sala("Bloco F", 3, true));
-        salas.add(new Sala("Bloco T", 1, false));
-        salas.add(new Sala("Bloco J", 6, true));
-        salas.add(new Sala("Bloco Q", 9, false));
+        salas.add(new Sala("Bloco A", 10, false, false));
+        salas.add(new Sala("Bloco C", 5, false, false));
+        salas.add(new Sala("Bloco F", 3, true, false));
+        salas.add(new Sala("Bloco T", 1, false, false));
+        salas.add(new Sala("Bloco J", 6, true, true));
+        salas.add(new Sala("Bloco Q", 9, false, false));
 
         return salas;
     }
@@ -56,16 +56,16 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     public ArrayList<Sala> historicoSalas() {
         ArrayList<Sala> salas = new ArrayList<>();
 
-        salas.add(new Sala("Bloco T", 5, true));
-        salas.add(new Sala("Bloco D", 15, false));
-        salas.add(new Sala("Bloco R", 17, true));
+        salas.add(new Sala("Bloco T", 5, true, false));
+        salas.add(new Sala("Bloco D", 15, false, true));
+        salas.add(new Sala("Bloco R", 17, true, false));
 
         return salas;
     }
 
 
-    public void adicionarSala(String bloco, int num, boolean lab) {
-        this.salas.add(new Sala("Bloco " + bloco, num, lab));
+    public void adicionarSala(String bloco, int num, boolean lab, boolean ocupada) {
+        this.salas.add(new Sala("Bloco " + bloco, num, lab, ocupada));
     }
 
     @Override
@@ -82,6 +82,8 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     public void onTabReselected(TabLayout.Tab tab) {
     }
 
-    public String getUsuarioLogin () { return usuarioLogin;}
+    public String getUsuarioLogin() {
+        return usuarioLogin;
+    }
 
 }

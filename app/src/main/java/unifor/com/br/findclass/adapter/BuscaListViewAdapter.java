@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -44,6 +46,7 @@ public class BuscaListViewAdapter extends BaseAdapter {
 
         View rowView = inflater.inflate(R.layout.sala_item_view, parent, false);
         TextView labelTextView = (TextView) rowView.findViewById(R.id.label_text_view);
+        ImageButton buttonCancel = (ImageButton) rowView.findViewById(R.id.cancel_button);
 
         if (!salaArrayList.get(position).getLaboratorio()) {
             labelTextView.setText(salaArrayList.get(position).getNome()
@@ -54,6 +57,20 @@ public class BuscaListViewAdapter extends BaseAdapter {
                     + " - Sala " + salaArrayList.get(position).getNumero()
                     + " - Lab");
         }
+
+        if (salaArrayList.get(position).isOculpada()) {
+            buttonCancel.setVisibility(View.VISIBLE);
+        } else {
+            buttonCancel.setVisibility(View.INVISIBLE);
+        }
+
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Cancelar pedido da sala", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         return rowView;
     }

@@ -14,10 +14,13 @@ public class Sala implements Serializable {
 
     private Boolean laboratorio;
 
-    public Sala(String nome, int numero, Boolean laboratorio) {
+    private boolean oculpada;
+
+    public Sala(String nome, int numero, Boolean laboratorio, boolean oculpada) {
         this.nome = nome;
         this.numero = numero;
         this.laboratorio = laboratorio;
+        this.oculpada = oculpada;
     }
 
     public String getNome() {
@@ -42,5 +45,13 @@ public class Sala implements Serializable {
 
     public void setLaboratorio(Boolean laboratorio) {
         this.laboratorio = laboratorio;
+    }
+
+    public boolean isOculpada() {
+        return oculpada;
+    }
+
+    public void setOculpada(boolean oculpada) {
+        this.oculpada = oculpada;
     }
 }
