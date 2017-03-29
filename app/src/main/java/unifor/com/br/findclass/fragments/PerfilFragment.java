@@ -1,17 +1,19 @@
 package unifor.com.br.findclass.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
 import unifor.com.br.findclass.views.MainActivity;
+import unifor.com.br.findclass.views.RegistroActivity;
 
 public class PerfilFragment extends Fragment {
 
@@ -35,6 +37,16 @@ public class PerfilFragment extends Fragment {
         matriculaUsuario.setText(myActivity.getUsuarioLogin());
 
         adapter = new BuscaListViewAdapter();
+
+
+        listaHistorico.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(myActivity, RegistroActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return visao;
     }
