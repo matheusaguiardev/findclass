@@ -15,7 +15,7 @@ import unifor.com.br.findclass.views.MainActivity;
 
 public class PerfilFragment extends Fragment {
 
-    private String provisorio = "Thiago Alonso";   // String usada como entrada do TextView da tela Perfil, enquanto não implementamos
+    private String provisorio = "Marina Dantas";   // String usada como entrada do TextView da tela Perfil, enquanto não implementamos
                                                    // a logica de busca dos dados da aplicação
     private TextView nomeUsuario;
     private TextView matriculaUsuario;
