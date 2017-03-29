@@ -70,6 +70,8 @@ public class BuscaFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(myActivity, RegistroActivity.class);
+                intent.putExtra("sala", adapter.getSalaArrayList().get(position));
+
                 startActivity(intent);
             }
         });
