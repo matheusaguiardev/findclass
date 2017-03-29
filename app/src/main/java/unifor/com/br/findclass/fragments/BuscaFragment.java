@@ -91,7 +91,17 @@ public class BuscaFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.buscar_button:
-                Toast.makeText(myActivity, "Ação de buscar !", Toast.LENGTH_SHORT).show();
+                String bloco = blocoEditText.getText().toString();
+                String sala = salaEditText.getText().toString();
+                if (bloco != null && !bloco.isEmpty() && !sala.isEmpty() && sala != null) {
+                    Toast.makeText(myActivity, "Ação de buscar !", Toast.LENGTH_SHORT).show();
+                } else if (bloco.isEmpty()) {
+                    blocoEditText.setError("Campo vazio");
+                } else if (sala.isEmpty()) {
+                    salaEditText.setError("Campo vazio");
+                } else {
+                    Toast.makeText(myActivity, "Verifique os campos !", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
