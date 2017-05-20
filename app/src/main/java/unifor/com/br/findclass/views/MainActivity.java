@@ -1,5 +1,6 @@
 package unifor.com.br.findclass.views;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import java.util.ArrayList;
 
 import unifor.com.br.findclass.R;
+import unifor.com.br.findclass.cloud.helper.ServiceHelper;
 import unifor.com.br.findclass.model.Sala;
 
 public class MainActivity extends GenericActivity implements TabLayout.OnTabSelectedListener {
@@ -16,6 +18,8 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
 
     String usuarioLogin;
     String usuarioSenha;
+
+    ServiceHelper serviceHelper;
 
     ArrayList<Sala> salas = new ArrayList<>();
 
@@ -37,18 +41,37 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
 
         tabLayout.addOnTabSelectedListener(this);
 
+        serviceHelper = new ServiceHelper();
 
     }
+
+
+    @Override
+    protected void onStart() {
+        asyncTaskDownload();
+        super.onStart();
+    }
+
+    private void asyncTaskDownload() {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                //serviceHelper.getAlunos();
+                serviceHelper.getSalas();
+            }
+        });
+    }
+
 
     public ArrayList<Sala> criarSala() {
         ArrayList<Sala> salas = new ArrayList<>();
 
-        salas.add(new Sala("Bloco A", 10, false, false));
-        salas.add(new Sala("Bloco C", 5, false, false));
-        salas.add(new Sala("Bloco F", 3, true, false));
-        salas.add(new Sala("Bloco T", 1, false, false));
-        salas.add(new Sala("Bloco J", 6, true, true));
-        salas.add(new Sala("Bloco Q", 9, false, false));
+        salas.add(new Sala("Bloco", 10, "A", false, false));
+        salas.add(new Sala("Bloco", 5, "V", false, false));
+        salas.add(new Sala("Bloco", 3, "S", true, false));
+        salas.add(new Sala("Bloco", 1, "R", false, false));
+        salas.add(new Sala("Bloco", 6, "W", true, true));
+        salas.add(new Sala("Bloco", 9, "Q", false, false));
 
         return salas;
     }
@@ -56,16 +79,16 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     public ArrayList<Sala> historicoSalas() {
         ArrayList<Sala> salas = new ArrayList<>();
 
-        salas.add(new Sala("Bloco T", 5, true, false));
-        salas.add(new Sala("Bloco D", 15, false, true));
-        salas.add(new Sala("Bloco R", 17, true, false));
+        salas.add(new Sala("Bloco", 5, "I", true, false));
+        salas.add(new Sala("Bloco", 15, "K", false, true));
+        salas.add(new Sala("Bloco", 17, "M", true, false));
 
         return salas;
     }
 
-
-    public void adicionarSala(String bloco, int num, boolean lab, boolean ocupada) {
-        this.salas.add(new Sala("Bloco " + bloco, num, lab, ocupada));
+    //String nome, int numeroSala, String bloco, Boolean laboratorio, Boolean oculpada
+    public void adicionarSala(String nomePredio, int num, String bloco, boolean lab, boolean ocupada) {
+        this.salas.add(new Sala(nomePredio, num, bloco, lab, ocupada));
     }
 
     @Override
