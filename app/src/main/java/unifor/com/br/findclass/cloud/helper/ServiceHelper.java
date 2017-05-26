@@ -10,6 +10,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 import unifor.com.br.findclass.cloud.interfaces.FindClassService;
 import unifor.com.br.findclass.model.Aluno;
+import unifor.com.br.findclass.model.Reserva;
 import unifor.com.br.findclass.model.Sala;
 import unifor.com.br.findclass.util.Utils;
 
@@ -57,6 +58,29 @@ public class ServiceHelper {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    public List<Reserva> getReservas() {
+        OkHttpClient okHttpClient = getHttpClient();
+
+        Retrofit retrofit = getRetrofitObject(Utils.baseURL, okHttpClient);
+
+        FindClassService service = retrofit.create(FindClassService.class);
+
+        Call<List<Reserva>> reservaService = service.listReservas();
+
+        try {
+            List<Reserva> reservas = new ArrayList<>();
+            if (!reservaService.isExecuted()) {
+                reservas = reservaService.execute().body();
+            }
+            return reservas;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+
+
     }
 
     private Retrofit getRetrofitObject(String url, OkHttpClient client) {

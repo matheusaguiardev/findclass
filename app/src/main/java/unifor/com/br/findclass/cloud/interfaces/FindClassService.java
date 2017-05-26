@@ -5,6 +5,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import unifor.com.br.findclass.model.Aluno;
+import unifor.com.br.findclass.model.Reserva;
 import unifor.com.br.findclass.model.Sala;
 
 /**
@@ -18,5 +19,9 @@ public interface FindClassService {
 
     @GET("salas")
     Call<List<Sala>> listSalas();
+
+    @GET("reserva")
+    Call<List<Reserva>> listReservas();
+
 
 }

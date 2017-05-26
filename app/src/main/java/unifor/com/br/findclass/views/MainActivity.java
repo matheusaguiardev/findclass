@@ -1,6 +1,5 @@
 package unifor.com.br.findclass.views;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,6 +8,7 @@ import java.util.ArrayList;
 
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.cloud.helper.ServiceHelper;
+import unifor.com.br.findclass.controller.CloudController;
 import unifor.com.br.findclass.model.Sala;
 
 public class MainActivity extends GenericActivity implements TabLayout.OnTabSelectedListener {
@@ -22,6 +22,8 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     ServiceHelper serviceHelper;
 
     ArrayList<Sala> salas = new ArrayList<>();
+
+    CloudController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,23 +45,16 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
 
         serviceHelper = new ServiceHelper();
 
+        controller = new CloudController(); // Objeto que vai ajudar fazer requisição no servidor.
     }
 
 
     @Override
     protected void onStart() {
-        asyncTaskDownload();
+        controller.getAllReservas(); // pega todas as RESERVAS que estão no json
+        controller.getAllRooms(); // pega todas as SALAS que estão no json
+        controller.getAllStudents(); // pega todas os ESTUDANTES que estão no json
         super.onStart();
-    }
-
-    private void asyncTaskDownload() {
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                //serviceHelper.getAlunos();
-                serviceHelper.getSalas();
-            }
-        });
     }
 
 
