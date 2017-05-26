@@ -26,10 +26,11 @@ public class ServiceHelper {
         Call<List<Aluno>> alunosService = service.listAlunos();
 
         try {
-
             // Vai retornar a lista de alunos que esta no Servidor (mockable.io).
-            List<Aluno> alunos = alunosService.execute().body();
-
+            List<Aluno> alunos = new ArrayList<>();
+            if (!alunosService.isExecuted()) {
+                alunos = alunosService.execute().body();
+            }
             return alunos;
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,11 +46,12 @@ public class ServiceHelper {
         FindClassService service = retrofit.create(FindClassService.class);
 
         Call<List<Sala>> salasService = service.listSalas();
-
         try {
             // Vai retornar a lista de salas que esta no servidor (mockable.io).
-            List<Sala> salas = salasService.execute().body();
-
+            List<Sala> salas = new ArrayList<>();
+            if (!salasService.isExecuted()) {
+                salas = salasService.execute().body();
+            }
             return salas;
         } catch (IOException e) {
             e.printStackTrace();

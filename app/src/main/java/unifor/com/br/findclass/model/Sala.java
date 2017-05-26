@@ -26,6 +26,17 @@ public class Sala implements Serializable {
     @JsonProperty("oculpada")
     private Boolean oculpada;
 
+    /*
+    *  {
+     "nome": "Bloco",
+     "numero": 1,
+     "bloco": "A",
+     "laboratorio": false,
+     "oculpada": false
+    },
+    * */
+
+
     public Sala() {
     }
 
