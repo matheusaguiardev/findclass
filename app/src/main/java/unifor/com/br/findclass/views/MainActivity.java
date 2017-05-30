@@ -1,3 +1,4 @@
+
 package unifor.com.br.findclass.views;
 
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
     ServiceHelper serviceHelper;
 
     ArrayList<Sala> salas = new ArrayList<>();
+    ArrayList<Sala> salas_historico = new ArrayList<>();
 
     CloudController controller;
 
@@ -51,34 +53,33 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
 
     @Override
     protected void onStart() {
-        controller.getAllReservas(); // pega todas as RESERVAS que estão no json
-        controller.getAllRooms(); // pega todas as SALAS que estão no json
+
+         controller.getAllReservas(); // pega todas as RESERVAS que estão no json
+
+        do {
+            salas = new ArrayList<>(controller.getAllRooms()); // pega todas as SALAS que estão no json
+        }while(salas.size() == 0);
+
         controller.getAllStudents(); // pega todas os ESTUDANTES que estão no json
+
         super.onStart();
     }
 
 
     public ArrayList<Sala> criarSala() {
-        ArrayList<Sala> salas = new ArrayList<>();
-
-        salas.add(new Sala("Bloco", 10, "A", false, false));
-        salas.add(new Sala("Bloco", 5, "V", false, false));
-        salas.add(new Sala("Bloco", 3, "S", true, false));
-        salas.add(new Sala("Bloco", 1, "R", false, false));
-        salas.add(new Sala("Bloco", 6, "W", true, true));
-        salas.add(new Sala("Bloco", 9, "Q", false, false));
 
         return salas;
     }
 
     public ArrayList<Sala> historicoSalas() {
-        ArrayList<Sala> salas = new ArrayList<>();
 
-        salas.add(new Sala("Bloco", 5, "I", true, false));
-        salas.add(new Sala("Bloco", 15, "K", false, true));
-        salas.add(new Sala("Bloco", 17, "M", true, false));
+        for(int i = 0; i<salas.size() ; i++){
+            if (salas.get(i).getOculpada()){
+                salas_historico.add(salas.get(i));
+            }
+        }
 
-        return salas;
+        return salas_historico;
     }
 
     //String nome, int numeroSala, String bloco, Boolean laboratorio, Boolean oculpada
