@@ -58,6 +58,7 @@ public class BuscaListViewAdapter extends BaseAdapter {
                     + " - Lab");
         }
 
+
         if (salaArrayList.get(position).getOculpada()) {
             buttonCancel.setVisibility(View.VISIBLE);
         } else {

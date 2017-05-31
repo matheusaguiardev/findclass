@@ -25,6 +25,7 @@ public class MainActivity extends GenericActivity implements TabLayout.OnTabSele
 
     CloudController controller;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

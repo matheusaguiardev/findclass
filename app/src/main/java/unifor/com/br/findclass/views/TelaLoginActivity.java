@@ -12,6 +12,7 @@ import unifor.com.br.findclass.R;
 
 public class TelaLoginActivity extends GenericActivity implements View.OnClickListener {
 
+
     private EditText campoSenha;
     private EditText campoMatricula;
     private TextView txtRecuperarSenha;

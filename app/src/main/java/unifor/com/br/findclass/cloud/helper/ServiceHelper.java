@@ -27,7 +27,6 @@ public class ServiceHelper {
         Call<List<Aluno>> alunosService = service.listAlunos();
 
         try {
-            // Vai retornar a lista de alunos que esta no Servidor (mockable.io).
             List<Aluno> alunos = new ArrayList<>();
             if (!alunosService.isExecuted()) {
                 alunos = alunosService.execute().body();
@@ -48,7 +47,6 @@ public class ServiceHelper {
 
         Call<List<Sala>> salasService = service.listSalas();
         try {
-            // Vai retornar a lista de salas que esta no servidor (mockable.io).
             List<Sala> salas = new ArrayList<>();
             if (!salasService.isExecuted()) {
                 salas = salasService.execute().body();

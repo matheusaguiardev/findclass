@@ -61,6 +61,7 @@ public class BuscaFragment extends Fragment implements View.OnClickListener {
     public void onStart() {
         super.onStart();
 
+
         adapter.setSalaArrayList(myActivity.criarSala());
         adapter.setContext(myActivity);
         listView.setAdapter(adapter);

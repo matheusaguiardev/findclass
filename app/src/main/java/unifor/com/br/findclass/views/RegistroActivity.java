@@ -51,7 +51,6 @@ public class RegistroActivity extends  GenericActivity implements  View.OnClickL
             txtNomeSala.setText(sala.getNome() + " - Sala " + sala.getNumero() + " Lab");
         }
 
-
         edtData.setOnClickListener(this);
         edtHora.setOnClickListener(this);
         btnRegistrar.setOnClickListener(this);

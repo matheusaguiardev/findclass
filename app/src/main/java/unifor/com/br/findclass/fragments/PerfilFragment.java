@@ -38,7 +38,6 @@ public class PerfilFragment extends Fragment {
         nomeUsuario.setText(provisorio);
         adapter = new BuscaListViewAdapter();
 
-
         listaHistorico.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
 

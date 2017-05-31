@@ -28,6 +28,7 @@ public class GenericActivity extends AppCompatActivity {
         return tabLayout;
     }
 
+
     protected ViewPager configViewPager(TabLayout tabLayout, ViewPager viewPager) {
         this.pagerAdapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
