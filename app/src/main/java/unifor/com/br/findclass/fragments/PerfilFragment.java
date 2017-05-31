@@ -1,5 +1,6 @@
 package unifor.com.br.findclass.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,9 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import unifor.com.br.findclass.R;
 import unifor.com.br.findclass.adapter.BuscaListViewAdapter;
+import unifor.com.br.findclass.model.Sala;
 import unifor.com.br.findclass.views.MainActivity;
+import unifor.com.br.findclass.views.RegistroActivity;
 
 public class PerfilFragment extends Fragment {
 
@@ -53,7 +58,7 @@ public class PerfilFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        adapter.setSalaArrayList(myActivity.historicoSalas());
+        adapter.setSalaArrayList((ArrayList<Sala>) myActivity.historicoSalas());
         adapter.setContext(myActivity);
         listaHistorico.setAdapter(adapter);
 

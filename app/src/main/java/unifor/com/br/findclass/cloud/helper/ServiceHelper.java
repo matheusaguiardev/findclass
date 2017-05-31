@@ -1,5 +1,8 @@
 package unifor.com.br.findclass.cloud.helper;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

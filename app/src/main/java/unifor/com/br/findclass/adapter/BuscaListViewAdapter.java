@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import unifor.com.br.findclass.R;
+import unifor.com.br.findclass.model.Reserva;
 import unifor.com.br.findclass.model.Sala;
 
 /**
